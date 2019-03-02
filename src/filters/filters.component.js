@@ -5,6 +5,7 @@ import AgeRangeFilter from './ageRangeFilter.component';
 import PopulationFilter from './populationFilter.component';
 import ShelterTypeFilter from './shelterTypeFilter.component';
 import GenderFilter from './genderFilter.component';
+import FilterSearchBtn from './filterSearchBtn.component';
 
 
 class Filters extends Component {
@@ -16,6 +17,7 @@ class Filters extends Component {
             <AgeRangeFilter />
             <PopulationFilter />
             <GenderFilter />
+            <FilterSearchBtn />
         </div>
     );
   }
