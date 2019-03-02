@@ -68,19 +68,18 @@ class Shelter extends Component {
     <Row>
       <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div className="service-selected-filter-name">Shelter Type</div>
          <Select
     mode="multiple"
     style={{ width: '100%' }}
-    placeholder="What kind of shelter are you looking for?"
+    placeholder="Shelter Type:"
     defaultValue={[]}
     onChange={(v) => this.onChange(v, 'type')}
   >
-    <Option value="domesticViolence">Domestic Violence Shelters</Option>
-    <Option value="emergencyShelters">Emergency Shelters</Option>
-    <Option value="maternityShelters">Maternity Shelters</Option>
-    <Option value="transitionalHousing">Transitional Housing</Option>
-    <Option value="veteransHousing">Veterans Housing</Option>
+    <Option value="domesticViolence">Domestic Violence</Option>
+    <Option value="emergencyShelters">Emergency</Option>
+    <Option value="maternityShelters">Maternity</Option>
+    <Option value="transitionalHousing">Transitional</Option>
+    <Option value="veteransHousing">Veterans</Option>
   </Select>
       </div>
       </Col>

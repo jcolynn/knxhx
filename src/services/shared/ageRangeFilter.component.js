@@ -23,11 +23,10 @@ class AgeRageFilter extends Component {
   render() {
     return (
         <Col span={COL_SPAN}>
-        <div className="service-selected-filter-name">Ages Served</div>
     <Select
       mode="multiple"
       style={{ width: '100%' }}
-      placeholder="What age range are you looking for?"
+      placeholder="Age:"
       defaultValue={[]}
       onChange={(v) => this.onChange(v)}
     >

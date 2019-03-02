@@ -76,3 +76,15 @@
 .ant-list-vertical .ant-list-item-extra-wrap {
     flex-wrap: initial !important;
 }
+
+.filter-btns-container button {
+    margin-bottom: 0.5rem;
+}
+
+.ant-select {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.ant-select-selection--multiple .ant-select-selection__rendered {
+}

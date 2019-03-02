@@ -24,11 +24,10 @@ class GenderFilter extends Component {
     return (
         <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div className="service-selected-filter-name">Gender</div>
   <Select
     mode="multiple"
     style={{ width: '100%' }}
-    placeholder="What gender/s should this shelter house?"
+    placeholder="Gender:"
     defaultValue={[]}
     onChange={(v) => this.onChange(v)}
   >

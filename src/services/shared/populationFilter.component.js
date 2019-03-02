@@ -24,11 +24,10 @@ class PopulationFilter extends Component {
     return (
         <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div className="service-selected-filter-name">Population</div>
   <Select
     mode="multiple"
     style={{ width: '100%' }}
-    placeholder="Different shelters house different communities. What community do you fit into?"
+    placeholder="Population:"
     defaultValue={[]}
     onChange={(v) => this.onChange(v)}
   >
