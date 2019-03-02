@@ -89,13 +89,10 @@ class ShelterDetails extends Component {
       </ul>
 
       <div className="shelter-details-data">{result.url}</div>
-   
+   <br />
       </div>
       
-      <div className="shelter-details-right">
-      
-      </div>
-
+  
  
 
 

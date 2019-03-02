@@ -53,9 +53,7 @@ class Main extends Component {
             <Route path="/about" component={About} />
             <Route path="/" component={Services} />
           </Switch>
-        <Footer style={{ textAlign: 'center' }}>
-          {APP_NAME} ©2019 Created at Knock Hack
-        </Footer>
+
       </Layout>
     </Layout>
     );
