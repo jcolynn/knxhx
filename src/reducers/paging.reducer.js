@@ -1,4 +1,4 @@
-import { SET_PAGING } from "../constants/paging.constants";
+import { SET_PAGING } from "../services/services.constants";
 
 const reducer = (state = {page: 1, count: 0}, action) => {
     switch (action.type) {

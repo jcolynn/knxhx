@@ -5,8 +5,8 @@ import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { COL_SPAN } from '../config/constants/serviceFiltersColumnSpan.constants';
-// import * as ServicesActions from '../services.actions';
+import * as ServicesActions from '../services.actions';
+import { COL_SPAN } from '../../constants/serviceFiltersColumnSpan.constant';
 
 const Option = Select.Option;
 
@@ -17,17 +17,16 @@ class AgeRageFilter extends Component {
   }
 
   onChange = (value) => {
-    // this.props.servicesActions.setAgeFilters(value);
+    this.props.servicesActions.setAgeFilters(value);
   }
 
   render() {
     return (
         <Col span={COL_SPAN}>
-        <div>Ages Served</div>
     <Select
       mode="multiple"
       style={{ width: '100%' }}
-      placeholder="What age range are you looking for?"
+      placeholder="Age:"
       defaultValue={[]}
       onChange={(v) => this.onChange(v)}
     >
@@ -49,7 +48,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      // servicesActions: bindActionCreators(ServicesActions, dispatch),
+      servicesActions: bindActionCreators(ServicesActions, dispatch),
   }
 };
 

@@ -1,0 +1,32 @@
+.shelter-details-container {
+    margin: 1rem;
+}
+
+.shelter-details-name {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.shelter-details-data {
+    margin-bottom: 1rem;
+}
+
+.shelter-details-container {
+    display: flex;
+    width: 100%;
+}
+
+.shelter-details-left {
+}
+
+.map-container {
+    height: 21rem;
+    margin-top: 1rem;
+}
+
+.shelter-details-beds-available {
+    color: #00C0EF;
+    font-weight: 600;
+}

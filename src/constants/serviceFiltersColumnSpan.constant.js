@@ -1,0 +1,1 @@
+export const COL_SPAN = 24;
