@@ -38,11 +38,11 @@ export const setRegionFilters = (val) => ({
     val
 });
 
-export function handleFetchSuccess({response, page}) {
+export function handleFetchSuccess({response, page, count}) {
     return (dispatch, getState) => {
         dispatch(setPaging({
             page: page,
-            count: response.count || getState().paging.count
+            count: count || getState().paging.count
         }));
         dispatch(setServiceResults(response))
     }
@@ -90,8 +90,8 @@ export function fetchData() {
         
 
 
-        firebase.firestore().collection('service_providers').limit(10).get().then(result => {
-            console.log(result.docs, 'result docs')
+        firebase.firestore().collection('service_providers').limit(500).get().then(result => {
+            console.log(result, 'result docs')
             const response = [];
             if (result.docs) {
                 result.docs.forEach(doc => {
@@ -141,7 +141,7 @@ export function fetchData() {
                     }
                 })
             }
-            dispatch(handleFetchSuccess({response, page, count: result.size}))
+            dispatch(handleFetchSuccess({response, page, count: result.size, count: result.size}))
           });
 
     }
