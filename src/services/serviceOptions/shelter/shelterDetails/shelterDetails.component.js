@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import { List, Avatar } from 'antd';
 import * as ServicesActions from '../../../services.actions';
 import './shelterDetails.css';
+import Map from './map.component';
 
 const Option = Select.Option;
 
@@ -56,6 +57,7 @@ class ShelterDetails extends Component {
     const result = this.props.serviceResults[0];
     return (
       <div className="shelter-details-container">
+      <div className="shelter-details-left">
       <div className="shelter-details-name">{result.name}</div>
       <div className="shelter-details-data">{result.additionalEligibility}</div>
       <div className="shelter-details-data">{result.description}</div>
@@ -82,6 +84,18 @@ class ShelterDetails extends Component {
       <div className="shelter-details-data">{result.url}</div>
    
       </div>
+      
+      <div className="shelter-details-right">
+      <Map />
+      </div>
+
+ 
+
+
+
+
+   
+      </div>
     );
   }
 }
@@ -99,5 +113,6 @@ const mapDispatchToProps = (dispatch) => {
       servicesActions: bindActionCreators(ServicesActions, dispatch),
   }
 };
+
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ShelterDetails));
