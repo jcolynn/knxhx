@@ -79,7 +79,7 @@ export function fetchData() {
             queryParams.push({param: type, value: true})
         })
         reqwest({
-            url: formattedURLWithQuery({url: `http://localhost:3001/${getState().serviceType}`, queries: queryParams}),
+            url: formattedURLWithQuery({url: `http://MYENDPOINT.COM/${getState().serviceType}`, queries: queryParams}),
             type: 'json',
             method: 'get',
             contentType: 'application/json',
