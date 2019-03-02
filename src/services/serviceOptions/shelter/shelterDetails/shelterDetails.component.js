@@ -88,7 +88,9 @@ class ShelterDetails extends Component {
         {result.veteransHousing && <li>Veteran's Housing</li>}
       </ul>
 
-      <div className="shelter-details-data">{result.url}</div>
+      <a href={result.url} className="shelter-details-data">{result.url}</a>
+   <br />
+   <br />
    <br />
       </div>
       
