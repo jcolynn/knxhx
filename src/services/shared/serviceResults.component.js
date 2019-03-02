@@ -16,7 +16,7 @@ class ServiceResults extends Component {
     getBedsAvailable = (item) => {
       console.log(item, 'item')
       if (item.bedsAvailable && item.bedsUsed && item.bedsUsed < item.bedsAvailable) {
-        return `There are ${item.bedsAvailable - item.bedsUsed} beds available`;  
+        return `${item.bedsAvailable - item.bedsUsed} beds currently available!`;  
       } 
     }
 

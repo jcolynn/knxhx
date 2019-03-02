@@ -59,10 +59,17 @@ class ShelterDetails extends Component {
       <div className="shelter-details-container">
       <div className="shelter-details-left">
       <div className="shelter-details-name">{result.name}</div>
+      <div className="shelter-details-beds-available">4 beds currently available!</div>
+      <div className="shelter-details-city">{result.street} {result.city} {result.state} {result.zipCode} </div>
+      <div className="shelter-details-beds-available">{result.phoneNumber}</div>
+
+
+      <Map street={result.street} city={result.city} state={result.state} zipCode={result.zipCode} />
+
+
       <div className="shelter-details-data">{result.additionalEligibility}</div>
       <div className="shelter-details-data">{result.description}</div>
-      <div className="shelter-details-data">{result.street} {result.city} {result.state} {result.zipCode} </div>
-      <div className="shelter-details-data">{result.phoneNumber}</div>
+    
     
       <ul>
         {result.domesticViolenceShelter && <li>Domestic Violence Shelter</li>}
@@ -86,7 +93,7 @@ class ShelterDetails extends Component {
       </div>
       
       <div className="shelter-details-right">
-      <Map street={result.street} city={result.city} state={result.state} zipCode={result.zipCode} />
+      
       </div>
 
  

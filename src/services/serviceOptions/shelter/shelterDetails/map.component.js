@@ -56,7 +56,7 @@ class MapComponent extends Component {
             }, () => {
                 self.setState({
                     map: <Map
-                    style={{maxWidth: '30rem', maxHeight: '30rem'}}
+                    style={{maxHeight: '20rem'}}
                     google={self.props.google}
                     initialCenter={{
                      lat: self.state.lat,
