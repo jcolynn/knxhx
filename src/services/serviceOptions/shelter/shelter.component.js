@@ -87,7 +87,6 @@ class Shelter extends Component {
       <AgeRageFilter />
       <PopulationFilter />
       <GenderFilter />
-
     </Row>
   </Checkbox.Group>
   <FilterSearchBtn />

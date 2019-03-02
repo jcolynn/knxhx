@@ -9,9 +9,17 @@ const Option = Select.Option;
 
 class ShelterDetails extends Component {
 
+  state = {
+    data: {}
+  }
+
   componentDidMount() {
-    this.props.servicesActions.setServiceType('shelters');
-    this.props.servicesActions.fetchData();
+    this.props.servicesActions.fetchDataById(this.props.match.params.id);
+   
+  }
+
+  componentDidUpdate(prevProps) {
+
   }
 
   onChange = (value) => {
@@ -19,9 +27,14 @@ class ShelterDetails extends Component {
   }
 
   render() {
+    if (!this.props.serviceResults.length) {
+      return null;
+    }
+    console.log(this.props.serviceResults, 'resultsss')
+ 
     return (
       <div>
-        hello
+        <div>{this.props.serviceResults[0].name}</div>
       </div>
     );
   }
@@ -30,6 +43,7 @@ class ShelterDetails extends Component {
 const mapStateToProps = (state) => {
   console.log(state, 'state tops...')
   return {
+    serviceResults: state.serviceResults,
       paging: state.paging,
   }
 };
