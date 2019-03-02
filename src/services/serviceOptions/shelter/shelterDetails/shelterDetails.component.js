@@ -61,7 +61,7 @@ class ShelterDetails extends Component {
       <div className="shelter-details-name">{result.name}</div>
       <div className="shelter-details-beds-available">4 beds currently available!</div>
       <div className="shelter-details-city">{result.street} {result.city} {result.state} {result.zipCode} </div>
-      <div className="shelter-details-beds-available">{result.phoneNumber}</div>
+      <a href={`tel:${result.phoneNumber}`} className="shelter-details-beds-available">{result.phoneNumber}</a>
 
 
       <Map street={result.street} city={result.city} state={result.state} zipCode={result.zipCode} />
