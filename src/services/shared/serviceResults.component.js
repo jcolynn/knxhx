@@ -13,6 +13,13 @@ class ServiceResults extends Component {
         this.props.history.push(`/services/${this.props.serviceType}/${id}`);
     }
 
+    getBedsAvailable = (item) => {
+      console.log(item, 'item')
+      if (item.bedsAvailable && item.bedsUsed && item.bedsUsed < item.bedsAvailable) {
+        return `There are ${item.bedsAvailable - item.bedsUsed} beds available`;  
+      } 
+    }
+
   render() {
     return (
       <div className="service-selected-option-results">
@@ -35,10 +42,10 @@ class ServiceResults extends Component {
         key={item.title}
       >
         <List.Item.Meta
-          title={<a onClick={() => this.goToDetails(item.id)}>{item.address}</a>}
-          description={item.description}
+          title={<a onClick={() => this.goToDetails(item.id)}>{item.name}</a>}
+          description={item.description.slice(0, 200) + '...'}
         />
-        {item.content}
+        {this.getBedsAvailable(item)}
       </List.Item>
     )}
   />

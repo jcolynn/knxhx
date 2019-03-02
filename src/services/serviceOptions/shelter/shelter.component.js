@@ -18,12 +18,37 @@ import GenderFilter from '../../shared/genderFilter.component';
 import RegionFilter from '../../shared/regionFilter.component';
 import FilterSearchBtn from '../../shared/filterSearchBtn.component';
 import ServiceResults from '../../shared/serviceResults.component';
+import firebase from '../../../Firebase';
 
 const Option = Select.Option;
+
+/* firebase */
 
 class Shelter extends Component {
 
   componentDidMount() {
+
+    console.log(firebase, 'firebaseee')
+
+    /*
+    firebase.firestore().collection('service_providers').limit(10).get().then(result => {
+      console.log(result, 'resultt')
+      this.setState({
+          loadingResults: false
+      });
+      const results = [];
+      if (result.docs) {
+          result.docs.forEach(doc => {
+            console.log(doc.data(), 'data!')
+              if (doc.exists) {
+                  results.push(doc.data());
+              }
+          })
+      }
+      this.props.onSetSamplesResults(results);
+  })
+*/
+
     this.props.servicesActions.setServiceType('shelters');
     this.props.servicesActions.fetchData();
   }
@@ -51,14 +76,11 @@ class Shelter extends Component {
     defaultValue={[]}
     onChange={(v) => this.onChange(v, 'type')}
   >
-    <Option value="twoOneOne">2-1-1</Option>
-    <Option value="ces">Coordinated Entry System (CES)</Option>
     <Option value="domesticViolence">Domestic Violence Shelters</Option>
     <Option value="emergencyShelters">Emergency Shelters</Option>
     <Option value="maternityShelters">Maternity Shelters</Option>
     <Option value="transitionalHousing">Transitional Housing</Option>
     <Option value="veteransHousing">Veterans Housing</Option>
-    <Option value="winterShelter">Winter Shelter</Option>
   </Select>
       </div>
       </Col>
