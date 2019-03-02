@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
 import { Card } from 'antd';
+import reqwest from 'reqwest'
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
@@ -29,7 +30,56 @@ const data = [
 class MapComponent extends Component {
 
   state = {
-    data: {}
+    lat: null,
+    lng: null
+  }
+
+  formattedAddressURL = () => {
+      let formattedURL = 'https://nominatim.openstreetmap.org/search?q=';
+     formattedURL += this.props.street.replace(/\s/g, '+');
+     formattedURL += `,${this.props.city}`
+     formattedURL += '&format=json&polygon=1&addressdetails=1'
+     console.log(formattedURL, 'formm url')
+     return formattedURL
+  }
+
+  componentDidMount() {
+      const self = this;
+    reqwest({
+        url: this.formattedAddressURL() //`https://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=json&polygon=1&addressdetails=1`
+      , method: 'get'
+      , success: function (resp) {
+          if (resp && resp.length) {
+            self.setState({
+                lat: resp[0].lat,
+                lng: resp[0].lon
+            }, () => {
+                self.setState({
+                    map: <Map
+                    style={{maxWidth: '30rem', maxHeight: '30rem'}}
+                    google={self.props.google}
+                    initialCenter={{
+                     lat: self.state.lat,
+                     lng: self.state.lng
+                   }}
+                   zoom={15}
+                   onClick={self.onMapClicked}
+                    >
+                 
+                 <Marker onClick={self.onMarkerClick} />
+                 
+                 <InfoWindow onClose={self.onInfoWindowClose}>
+                   <div>hello</div>
+                 </InfoWindow>
+                 </Map>
+                })
+                console.log(self.state, 'self state')
+            })
+            console.log(resp, 'resppp')
+          }
+    
+        }
+    })
   }
 
  
@@ -37,18 +87,9 @@ class MapComponent extends Component {
 
     return (
         <div className="map-container">
-   <Map
-   style={{maxWidth: '30rem', maxHeight: '30rem'}}
-   google={this.props.google} zoom={14}>
-
-<Marker onClick={this.onMarkerClick}
-        name={'Current location'} />
-
-<InfoWindow onClose={this.onInfoWindowClose}>
-
-</InfoWindow>
-</Map>
-
+   {
+   this.state.map
+   }
         </div>
    
       

@@ -86,7 +86,7 @@ class ShelterDetails extends Component {
       </div>
       
       <div className="shelter-details-right">
-      <Map />
+      <Map street={result.street} city={result.city} state={result.state} zipCode={result.zipCode} />
       </div>
 
  
