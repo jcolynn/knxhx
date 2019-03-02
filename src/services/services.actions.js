@@ -133,6 +133,57 @@ export function fetchData() {
                                 }
                             }
                         })
+
+                        populationFilters.forEach(populationFilter => {
+                            if (populationFilter === 'foster') {
+                                if (!data.fosterYouth) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (populationFilter === 'lgbtq') {
+                                if (!data.lgbtq) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (populationFilter === "parenting") {
+                                if (!data.parenting) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (populationFilter === 'probation') {
+                                if (!data.probation) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                        })
+
+                        shelterTypeFilters.forEach(shelterTypeFilter => {
+                            if (shelterTypeFilter === "domesticViolence" ) {
+                                if (!data.domesticViolenceShelter) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (shelterTypeFilter === "transitionalHousing") {
+                                if (!data.transitionalHousing) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (shelterTypeFilter === "emergencyShelters") {
+                                if (!data.emergencyShelter) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (shelterTypeFilter === "maternityShelters") {
+                                if (!data.maternityShelter) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                            if (shelterTypeFilter === "veteransHousing") {
+                                if (!data.veteransHousing) {
+                                    allowEntryToResults = false;
+                                }
+                            }
+                        })
                         
                         if (allowEntryToResults) {
                             response.push(doc.data());
