@@ -1,0 +1,12 @@
+.need-help-now-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.all-help-lines-notice {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}

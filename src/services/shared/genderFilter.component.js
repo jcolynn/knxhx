@@ -5,19 +5,19 @@ import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-// import * as ServicesActions from '../services.actions';
-import { COL_SPAN } from '../config/constants/serviceFiltersColumnSpan.constants';
+import * as ServicesActions from '../services.actions';
+import { COL_SPAN } from '../../constants/serviceFiltersColumnSpan.constant';
 
 const Option = Select.Option;
 
-class PopulationFilter extends Component {
+class GenderFilter extends Component {
 
   componentDidMount() {
   
   }
 
   onChange = (value) => {
-    // this.props.servicesActions.setPopulationFilters(value);
+    this.props.servicesActions.setGenderFilters(value);
   }
 
   render() {
@@ -54,8 +54,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      // servicesActions: bindActionCreators(ServicesActions, dispatch),
+      servicesActions: bindActionCreators(ServicesActions, dispatch),
   }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PopulationFilter));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GenderFilter));

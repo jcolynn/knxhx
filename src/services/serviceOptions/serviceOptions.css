@@ -1,0 +1,29 @@
+.service-options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-option {
+    width: 10rem;
+    height: 10rem;
+    background: #555555;
+    margin: 1rem;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+}
+
+.service-option-inactive {
+    cursor: no-drop;
+    background: rgb(197, 197, 197);
+}
+
+.service-option i {
+    font-size: 5rem;
+}

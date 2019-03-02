@@ -5,7 +5,7 @@ import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-// import * as ServicesActions from '../services.actions';
+import * as ServicesActions from '../services.actions';
 
 const Option = Select.Option;
 
@@ -16,7 +16,7 @@ class FilterSearchBtn extends Component {
   }
 
   onSearch = () => {
-    // this.props.servicesActions.fetchData();
+    this.props.servicesActions.fetchData();
   }
 
   render() {
@@ -35,7 +35,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-      // servicesActions: bindActionCreators(ServicesActions, dispatch),
+      servicesActions: bindActionCreators(ServicesActions, dispatch),
   }
 };
 

@@ -1,0 +1,43 @@
+.service-selected-option {
+    margin: 2rem;
+}
+
+.service-selected-filter-options {
+    background: #e2e2e2;
+    padding: 1rem;
+    border-radius: 0.3rem;
+}
+
+.service-selected-breadcrumbs {
+    margin-bottom: 1rem;
+}
+
+.service-selected-option-results {
+    background: white;
+    border-radius: 0.3rem;
+    padding: 0 1rem 1rem;
+}
+
+.service-selected-filter-options,
+.service-selected-option-results {
+    border: 1px solid #b8b8b8;
+}
+
+.service-selected-option-showing-results-count {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-selected-filter {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.service-selected-option-search-btn {
+    margin-top: 1rem;
+}
+
+.welcome-text {
+    font-size: 2rem;
+    text-align: center;
+}
