@@ -68,7 +68,7 @@ class Shelter extends Component {
     <Row>
       <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div>Shelter Type</div>
+      <div className="service-selected-filter-name">Shelter Type</div>
          <Select
     mode="multiple"
     style={{ width: '100%' }}

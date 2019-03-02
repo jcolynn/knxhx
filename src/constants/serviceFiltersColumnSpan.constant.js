@@ -1,1 +1,1 @@
-export const COL_SPAN = 12;
+export const COL_SPAN = 24;

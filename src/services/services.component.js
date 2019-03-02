@@ -15,6 +15,7 @@ class Services extends Component {
           <Route path="/services/crises" component={Crisis} />
           <Route path="/services/shelters" component={Shelter} />
           <Route path="/services" component={ServiceOptions} />
+          <Route path="/" component={ServiceOptions} />
       </Switch>
     );
   }

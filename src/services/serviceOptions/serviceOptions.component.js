@@ -94,7 +94,7 @@ class ServiceOptions extends Component {
   render() {
     return (
         <div>
-             <div className="welcome-text">What service would you like help with?</div>
+             <div className="welcome-text">How can we help?</div>
              <div className="service-options">
                 {
                     this.options.map((option, index) => (

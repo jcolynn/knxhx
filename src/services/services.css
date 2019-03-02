@@ -1,5 +1,5 @@
 .service-selected-option {
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .service-selected-filter-options {
@@ -10,17 +10,13 @@
 
 .service-selected-breadcrumbs {
     margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 .service-selected-option-results {
     background: white;
     border-radius: 0.3rem;
     padding: 0 1rem 1rem;
-}
-
-.service-selected-filter-options,
-.service-selected-option-results {
-    border: 1px solid #b8b8b8;
 }
 
 .service-selected-option-showing-results-count {
@@ -33,6 +29,10 @@
     margin-right: 0.2rem;
 }
 
+.service-selected-filter-name {
+    font-size: 1.2rem;
+}
+
 .service-selected-option-search-btn {
     margin-top: 1rem;
 }
@@ -40,4 +40,39 @@
 .welcome-text {
     font-size: 2rem;
     text-align: center;
+}
+
+.service-selected-option-showing-results-count {
+    font-size: 1.2rem;
+}
+
+
+
+
+.ant-list-item-meta-title {
+    font-size: 1.5rem;
+}
+
+.ant-list-item-meta-description {
+    font-size: 1.1rem;
+}
+
+.ant-list-vertical .ant-list-item-content {
+    font-size: 1.1rem;
+    color: #0f799d;
+}
+
+.ant-list-item-extra {
+    font-size: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.ant-list-item {
+    cursor: pointer;
+}
+
+.ant-list-vertical .ant-list-item-extra-wrap {
+    flex-wrap: initial !important;
 }

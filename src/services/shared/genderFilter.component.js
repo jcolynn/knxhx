@@ -24,7 +24,7 @@ class GenderFilter extends Component {
     return (
         <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div>Gender</div>
+      <div className="service-selected-filter-name">Gender</div>
   <Select
     mode="multiple"
     style={{ width: '100%' }}

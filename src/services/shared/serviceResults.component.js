@@ -39,10 +39,12 @@ class ServiceResults extends Component {
     dataSource={this.props.results}
     renderItem={item => (
       <List.Item
+        onClick={() => this.goToDetails(item.id)}
         key={item.title}
+        extra={<Icon type="right" />}
       >
         <List.Item.Meta
-          title={<a onClick={() => this.goToDetails(item.id)}>{item.name}</a>}
+          title={<a >{item.name}</a>}
           description={item.description.slice(0, 200) + '...'}
         />
         {this.getBedsAvailable(item)}

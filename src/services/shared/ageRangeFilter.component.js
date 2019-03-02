@@ -23,7 +23,7 @@ class AgeRageFilter extends Component {
   render() {
     return (
         <Col span={COL_SPAN}>
-        <div>Ages Served</div>
+        <div className="service-selected-filter-name">Ages Served</div>
     <Select
       mode="multiple"
       style={{ width: '100%' }}

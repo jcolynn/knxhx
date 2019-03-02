@@ -43,30 +43,8 @@ class Main extends Component {
   render() {
     return (
       <Layout className="layout">
-      <Sider
-        breakpoint="lg"
-        collapsedWidth="0"
-        onBreakpoint={(broken) => { console.log(broken); }}
-        onCollapse={(collapsed, type) => { console.log(collapsed, type); }}
-      >
-        <div className="logo" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={[this.getSelected()]}>
-          <Menu.Item onClick={() => this.onSelectMenuItem('services')} key="1">
-            <Icon type="home" />
-            <span className="nav-text">Services</span>
-          </Menu.Item>
-          <Menu.Item key="3" onClick={() => this.onSelectMenuItem('i-need-help-now')}>
-            <Icon type="alert" />
-            <span className="nav-text">I Need Help Now</span>
-          </Menu.Item>
-          <Menu.Item key="4" onClick={() => this.onSelectMenuItem('feedback')}>
-            <Icon type="team" />
-            <span className="nav-text">Feedback</span>
-          </Menu.Item>
-        </Menu>
-      </Sider>
+     
       <Layout>
-        <Header style={{ background: '#fff', padding: 0 }} />
         <Switch>
             <Route path="/services" component={Services} />
             <Route path="/announcements" component={Announcements} />

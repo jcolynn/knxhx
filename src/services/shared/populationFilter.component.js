@@ -24,7 +24,7 @@ class PopulationFilter extends Component {
     return (
         <Col span={COL_SPAN}>
       <div className="service-selected-filter">
-      <div>Population</div>
+      <div className="service-selected-filter-name">Population</div>
   <Select
     mode="multiple"
     style={{ width: '100%' }}
