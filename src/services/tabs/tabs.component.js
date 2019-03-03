@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Breadcrumb, Button } from 'antd';
+
+import { message } from 'antd';
 import { Checkbox, Row, Col, Icon } from 'antd';
 import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
@@ -21,6 +23,10 @@ class Tabs extends Component {
     // this.props.servicesActions.setGenderFilters(value);
   }
 
+  showAlert = () => {
+    message.info('This feature is not yet available. :(');
+  }
+
   render() {
     return (
         <div className="tabs">
@@ -28,15 +34,15 @@ class Tabs extends Component {
                 <Icon type="search" />
                 <div>Search</div>
             </div>
-            <div className="tab">
+            <div onClick={this.showAlert} className="tab">
                 <Icon type="global" />
                 <div>Map</div>
             </div>
-            <div className="tab">
+            <div onClick={this.showAlert} className="tab">
                 <Icon type="heart" />
                 <div>Favorite</div>
             </div>
-            <div className="tab">
+            <div onClick={this.showAlert} className="tab">
                 <Icon type="ellipsis" />
                 <div>More</div>
             </div>

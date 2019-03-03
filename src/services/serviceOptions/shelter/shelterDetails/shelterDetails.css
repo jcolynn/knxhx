@@ -45,3 +45,9 @@
     width: 100vw;
     padding: 2rem;
 }
+
+.service-selected-details-breadcrumbs {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}

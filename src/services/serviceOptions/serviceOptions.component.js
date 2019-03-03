@@ -99,7 +99,7 @@ class ServiceOptions extends Component {
                 {
                     this.options.map((option, index) => (
                         <div key={index}>
-                            <ServiceOption go={() => this.goTo(option.route, true)} {...option} />
+                            <ServiceOption go={() => this.goTo('shelters', true)} {...option} />
                         </div>
                     ))
                 }
