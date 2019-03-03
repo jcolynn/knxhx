@@ -96,6 +96,103 @@ class Admin extends Component {
           </Row>
           <Row gutter={12}>
             <Col span={12} >
+              <h3>Full Resource Name</h3>
+              <h4>Required</h4>
+              <p>Enter the name of the Agency or Site</p>
+            </Col>
+            <Col span={12} >
+              <input type="text" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Description</h3>
+              <h4>Required</h4>
+              <p>Describe the resources and services that are offered</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Website</h3>
+              <p>E.g. www.website.com</p>
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Hours</h3>
+              <p>Enter the primary hours of operation for the Agency or Site</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Intake Process</h3>
+              <p>Describe the intake process for people seeking services from this Agency or Site</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Program Fees</h3>
+              <p>Describe any associated fees that this resource charges for its service, if any.</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Languages</h3>
+              <p>List any languages spoken by staff at this Agency or Site</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Eligibility</h3>
+              <p>Describe any criteria an individual must meet to be eligible for services from this Agnecy or Site</p>
+            </Col>
+            <Col span={12} >
+              <textarea rows="4" cols="50" />
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Handicap Accessibility</h3>
+              <p>Is this resource ADA compliant?</p>
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Employer ID</h3>
+              <p>Enter the 9 digit EIN with or without the dash after the first 2 numbers</p>
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+              <h3>Year Incorporated</h3>
+              <p>Enter the year incorporated, such as '1999'</p>
             </Col>
             <Col span={12} >
             </Col>
@@ -141,84 +238,7 @@ class Admin extends Component {
             </Col>
             <Col span={12} >
             </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
-          </Row>
-          <Row gutter={12}>
-            <Col span={12} >
-            </Col>
-            <Col span={12} >
-            </Col>
+            <Button type="primary">Submit</Button>
           </Row>
         </React.Fragment>
     );
