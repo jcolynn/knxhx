@@ -88,3 +88,15 @@
 
 .ant-select-selection--multiple .ant-select-selection__rendered {
 }
+
+.yellow-icon {
+    color: #FFB566;
+}
+
+.favorites-list {
+    margin: 1rem;
+}
+
+.red-icon {
+    color: red;
+}

@@ -23,14 +23,40 @@ class Tabs extends Component {
     // this.props.servicesActions.setGenderFilters(value);
   }
 
+  goToFavorites = () => {
+    this.props.history.push('/services/favorites');
+  }
+
+  goToServices = () => {
+    this.props.history.push('/services');
+  }
+
   showAlert = () => {
     message.info('This feature is not yet available. :(');
+  }
+
+  getClass = (which) => {
+    console.log(this.props.history, 'histttt')
+    if (which === 'favorites') {
+      return /favorites/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab'
+    }
+    if (which === 'search') {
+      return /favorites/.test(this.props.history.location.pathname) || /crisis/.test(this.props.history.location.pathname) ? 'tab' : 'tab tab-active'
+    }
+    if (which === 'crisis') {
+      return /crisis/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab tab'
+    }
+    return 'tab'
+  }
+
+  goToCrisis = () => {
+    this.props.history.push('/services/crisis')
   }
 
   render() {
     return (
         <div className="tabs">
-            <div className="tab tab-active">
+            <div onClick={this.goToServices} className={this.getClass('search')}>
                 <Icon type="search" />
                 <div>Search</div>
             </div>
@@ -38,13 +64,13 @@ class Tabs extends Component {
                 <Icon type="global" />
                 <div>Map</div>
             </div>
-            <div onClick={this.showAlert} className="tab">
+            <div onClick={this.goToFavorites} className={this.getClass('favorites')}>
                 <Icon type="heart" />
-                <div>Favorite</div>
+                <div>Favorites</div>
             </div>
-            <div onClick={this.showAlert} className="tab">
-                <Icon type="ellipsis" />
-                <div>More</div>
+            <div onClick={this.goToCrisis} className={this.getClass('crisis')}>
+                <Icon type="alert" />
+                <div>Crisis</div>
             </div>
         </div>
     );

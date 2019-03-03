@@ -49,6 +49,7 @@ class Main extends Component {
         <Switch>
             <Route path="/services" component={Services} />
             <Route path="/admin" component={Admin} />
+        
             <Route path="/" component={Services} />
           </Switch>
 

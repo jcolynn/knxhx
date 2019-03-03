@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Button } from 'antd';
+import { Checkbox, Row, Col } from 'antd';
 import { List, message, Avatar, Spin, Icon } from 'antd';
+import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as ServicesActions from '../services.actions';
+
+const Option = Select.Option;
 
 const IconText = ({ type, text }) => (
   <span>
@@ -16,24 +20,35 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-class ServiceResults extends Component {
+class Favorites extends Component {
 
-    goToDetails = (id) => {
-        console.log(id, 'idd')
-        this.props.history.push(`/services/${this.props.serviceType}/${id}`);
-    }
+  componentDidMount() {
+    this.props.servicesActions.setServiceType('shelters');
+    this.props.servicesActions.fetchDataForFavorites();
+  }
 
-    getBedsAvailable = (item) => {
-      console.log(item, 'item')
-      if (item.bedsAvailable && item.bedsUsed && item.bedsUsed < item.bedsAvailable) {
-        return `${item.bedsAvailable - item.bedsUsed} beds currently available!`;  
-      } 
-    }
+  goToDetails = (id) => {
+    console.log(id, 'idd')
+    this.props.history.push(`/services/${this.props.serviceType}/${id}`);
+}
+
+
+  onChange = (value) => {
+    // this.props.servicesActions.setAgeFilters(value);
+  }
+
+  getBedsAvailable = (item) => {
+    console.log(item, 'item')
+    if (item.bedsAvailable && item.bedsUsed && item.bedsUsed < item.bedsAvailable) {
+      return `${item.bedsAvailable - item.bedsUsed} beds currently available!`;  
+    } 
+  }
 
   render() {
     return (
-      <div className="service-selected-option-results">
-          <List
+        <div>
+             <List
+             className="favorites-list"
     itemLayout="vertical"
     size="large"
     pagination={{
@@ -55,32 +70,31 @@ class ServiceResults extends Component {
         extra={<Icon type="right" />}
       >
         <List.Item.Meta
-          title={<a >{item.name}</a>}
+          title={<a >{item.name} <Icon className="red-icon" type="heart" theme="filled"  style={{ marginRight: 2 }}/></a>}
           description={item.description.slice(0, 200) + '...'}
         />
         {this.getBedsAvailable(item)}
       </List.Item>
     )}
   />
-      </div>
+        </div>
     );
   }
 }
 
-
 const mapStateToProps = (state) => {
-    console.log(state, 'state...')
-    return {
-        serviceType: state.serviceType,
-        paging: state.paging,
-        results: state.serviceResults
-    }
+  console.log(state, 'state tops...')
+  return {
+    serviceType: state.serviceType,
+    results: state.serviceResults,
+      paging: state.paging,
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        servicesActions: bindActionCreators(ServicesActions, dispatch),
-    }
+  return {
+      servicesActions: bindActionCreators(ServicesActions, dispatch),
+  }
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ServiceResults));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Favorites));
