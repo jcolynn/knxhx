@@ -39,7 +39,9 @@
 
 .welcome-text {
     font-size: 2rem;
-    text-align: center;
+    color: black;
+    font-weight: 600;
+    width: 100%;
 }
 
 .service-selected-option-showing-results-count {
@@ -99,4 +101,21 @@
 
 .red-icon {
     color: red;
+}
+
+.admin-form {
+    margin: 1rem;
+}
+
+.service-options {
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+}
+
+.ant-layout {
+    background: white;
+}
+
+.ant-card-head {
+    background: #ececec;
 }

@@ -7,6 +7,7 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 import { List, Avatar } from 'antd';
+// const { InfoBox } = require("react-google-maps/lib/components/addons/InfoBox");
 
 const Option = Select.Option;
 
@@ -79,7 +80,21 @@ class MapPageMap extends Component {
                         }
     
    
-                     
+   {
+       /*
+ <InfoBox
+      defaultPosition={new self.props.google.maps.LatLng(self.state.latLngs[0].lat, self.state.latLngs[0].lng)}
+      options={{ closeBoxURL: ``, enableEventPropagation: true }}
+    >
+      <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
+        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
+          Hello, Taipei!
+        </div>
+      </div>
+    </InfoBox>
+                
+       */
+   }     
                      <Marker onClick={self.onMarkerClick} />
                      
                      <InfoWindow onClose={self.onInfoWindowClose}>

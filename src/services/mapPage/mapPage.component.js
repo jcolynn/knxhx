@@ -51,7 +51,7 @@ class MapPage extends Component {
   }
 
   render() {
-    if (!this.props.results.length) {
+    if (this.props.results.length < 2) {
       return null;
     }
     return (

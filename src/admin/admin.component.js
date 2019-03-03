@@ -92,7 +92,7 @@ class Admin extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
         <React.Fragment>
-          <Form>
+          <Form className="admin-form">
           <Form.Item
           label="Full Resource Name"
           labelCol={{ span: 5 }}
