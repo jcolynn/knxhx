@@ -43,7 +43,7 @@ class Admin extends Component {
     }
   }
   componentDidMount() {
-  
+
   }
 
   onChange = event => {
@@ -94,8 +94,131 @@ class Admin extends Component {
             <h1>Add a New Resource Record</h1>
             <p>Use the provided form to add your new resource listing.</p>
           </Row>
-          <Row>
-            
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
+          </Row>
+          <Row gutter={12}>
+            <Col span={12} >
+            </Col>
+            <Col span={12} >
+            </Col>
           </Row>
         </React.Fragment>
     );
