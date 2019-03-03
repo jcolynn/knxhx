@@ -29,58 +29,77 @@ class MapPageMap extends Component {
 
   state = {
     lat: null,
-    lng: null
+    lng: null,
+    latLngs: []
   }
 
-  formattedAddressURL = () => {
+  formattedAddressURL = (result) => {
      let formattedURL = 'https://nominatim.openstreetmap.org/search?q=';
-     formattedURL += this.props.street.replace(/\s/g, '+');
-     formattedURL += `,${this.props.city}`
+     formattedURL += result.street.replace(/\s/g, '+');
+     formattedURL += `,${result.city}`
      formattedURL += '&format=json&polygon=1&addressdetails=1'
      console.log(formattedURL, 'formm url')
      return formattedURL
   }
 
+  goToDetail = (id) => {
+      console.log(id, 'idd');
+      this.props.goTo(id);
+  }
+
   componentDidMount() {
       const self = this;
-      reqwest({
-        url: this.formattedAddressURL() //`https://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=json&polygon=1&addressdetails=1`
-      , method: 'get'
-      , success: function (resp) {
-          if (resp && resp.length) {
-            self.setState({
-                lat: resp[0].lat,
-                lng: resp[0].lon
-            }, () => {
+      this.props.results.forEach((result, index) => {
+        reqwest({
+            url: this.formattedAddressURL(result) //`https://nominatim.openstreetmap.org/search?q=135+pilkington+avenue,+birmingham&format=json&polygon=1&addressdetails=1`
+          , method: 'get'
+          , success: function (resp) {
+              if (resp && resp.length) {
                 self.setState({
-                    map: <Map
-                    google={self.props.google}
-                    initialCenter={{
-                     lat: self.state.lat,
-                     lng: self.state.lng
-                   }}
-                   zoom={15}
-                   onClick={self.onMapClicked}
-                    >
-                 
-                 <Marker onClick={self.onMarkerClick} />
-                 
-                 <InfoWindow onClose={self.onInfoWindowClose}>
-                   <div>hello</div>
-                 </InfoWindow>
-                 </Map>
-                })
-                console.log(self.state, 'self state')
-            })
-            console.log(resp, 'resppp')
-          }
+                    latLngs: [...self.state.latLngs, {lat: resp[0].lat, lng: resp[0].lon, id: result.id}]
+                }, () => {
+                    self.setState({
+                        map: <Map
+                        key={index}
+                        google={self.props.google}
+                        initialCenter={{
+                         lat: self.state.latLngs[0].lat,
+                         lng: self.state.latLngs[0].lng
+                       }}
+                       zoom={15}
+                        >
+                        {
+                            self.state.latLngs.map((latLng, _index) => (
+                                <Marker
+                                onClick={() => self.goToDetail(latLng.id)}
+                                key={_index}
+                                position={{ lat: latLng.lat, lng: latLng.lng }}
+                              />
+                            ))
+                        }
     
-        }
-    }).catch((err) => {
-        self.setState({
-            mapError: true
+   
+                     
+                     <Marker onClick={self.onMarkerClick} />
+                     
+                     <InfoWindow onClose={self.onInfoWindowClose}>
+                       <div>hello</div>
+                     </InfoWindow>
+                     </Map>
+                    })
+                    console.log(self.state, 'self state')
+                })
+                console.log(resp, 'resppp')
+              }
+        
+            }
+        }).catch((err) => {
+            self.setState({
+                mapError: true
+            })
         })
-    })
+      })
+      
   }
 
  

@@ -25,7 +25,10 @@ class MapPage extends Component {
 
   componentDidMount() {
     this.props.servicesActions.setServiceType('shelters');
-    this.props.servicesActions.fetchDataForFavorites();
+    if (this.props.results.length < 10) {
+      this.props.servicesActions.fetchDataForMaps();
+    }
+  
   }
 
   goToDetails = (id) => {
@@ -45,13 +48,16 @@ class MapPage extends Component {
     } 
   }
 
+  goTo = (id) => {
+    this.props.history.push(`/services/shelters/${id}`)
+  }
+
   render() {
     if (!this.props.results.length) {
       return null;
     }
-    const result = this.props.results[0]
     return (
-        <MapPageMap street={result.street} city={result.city} state={result.state} zipCode={result.zipCode} />
+        <MapPageMap goTo={this.goTo} results={this.props.results} />
     );
   }
 }
