@@ -25,9 +25,7 @@ class MapPage extends Component {
 
   componentDidMount() {
     this.props.servicesActions.setServiceType('shelters');
-    if (this.props.results.length < 10) {
-      this.props.servicesActions.fetchDataForMaps();
-    }
+    this.props.servicesActions.fetchDataForMaps();
   
   }
 
