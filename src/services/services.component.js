@@ -7,6 +7,7 @@ import Crisis from './serviceOptions/crisis/crisis.component';
 import ShelterDetails from './serviceOptions/shelter/shelterDetails/shelterDetails.component';
 import Tabs from './tabs/tabs.component';
 import Favorites from './favorites/favorites.component';
+import NeedHelpNow from '../needHelpNow/needHelpNow.component';
 
 class Services extends Component {
 
@@ -18,6 +19,7 @@ class Services extends Component {
           <Route path="/services/crises" component={Crisis} />
           <Route path="/services/shelters" component={Shelter} />
           <Route path="/services/favorites" component={Favorites} />
+          <Route path="/services/crisis" component={NeedHelpNow} />
           <Route path="/services" component={ServiceOptions} />
           <Route path="/" component={ServiceOptions} />
       </Switch>

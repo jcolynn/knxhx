@@ -41,9 +41,16 @@ class Tabs extends Component {
       return /favorites/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab'
     }
     if (which === 'search') {
-      return /favorites/.test(this.props.history.location.pathname) ? 'tab' : 'tab tab-active'
+      return /favorites/.test(this.props.history.location.pathname) || /crisis/.test(this.props.history.location.pathname) ? 'tab' : 'tab tab-active'
+    }
+    if (which === 'crisis') {
+      return /crisis/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab tab'
     }
     return 'tab'
+  }
+
+  goToCrisis = () => {
+    this.props.history.push('/services/crisis')
   }
 
   render() {
@@ -61,9 +68,9 @@ class Tabs extends Component {
                 <Icon type="heart" />
                 <div>Favorites</div>
             </div>
-            <div onClick={this.showAlert} className="tab">
-                <Icon type="ellipsis" />
-                <div>More</div>
+            <div onClick={this.goToCrisis} className={this.getClass('crisis')}>
+                <Icon type="alert" />
+                <div>Crisis</div>
             </div>
         </div>
     );
