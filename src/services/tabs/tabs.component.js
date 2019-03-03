@@ -41,16 +41,23 @@ class Tabs extends Component {
       return /favorites/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab'
     }
     if (which === 'search') {
-      return /favorites/.test(this.props.history.location.pathname) || /crisis/.test(this.props.history.location.pathname) ? 'tab' : 'tab tab-active'
+      return /favorites/.test(this.props.history.location.pathname) || /map/.test(this.props.history.location.pathname) || /crisis/.test(this.props.history.location.pathname) ? 'tab' : 'tab tab-active'
     }
     if (which === 'crisis') {
       return /crisis/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab tab'
+    }
+    if (which === 'map') {
+      return /map/.test(this.props.history.location.pathname) ? 'tab tab-active' : 'tab tab'
     }
     return 'tab'
   }
 
   goToCrisis = () => {
     this.props.history.push('/services/crisis')
+  }
+
+  goToMap = () => {
+    this.props.history.push('/services/map')
   }
 
   render() {
@@ -60,7 +67,7 @@ class Tabs extends Component {
                 <Icon type="search" />
                 <div>Search</div>
             </div>
-            <div onClick={this.showAlert} className="tab">
+            <div onClick={this.goToMap} className={this.getClass('map')}>
                 <Icon type="global" />
                 <div>Map</div>
             </div>
