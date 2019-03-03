@@ -8,7 +8,7 @@ const PagingInfo = (props) => {
     const rightText = Math.min(((props.paging.page) * 20), props.paging.count);
 
     return <div className="service-selected-option-showing-results-count">
-    Showing {leftText} - {rightText} of {props.paging.count} results for {props.type}
+    Showing {props.paging.numResults} results for {props.type}
   </div>
 }
 

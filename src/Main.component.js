@@ -10,6 +10,7 @@ import Feedback from './feedback/feedback.component';
 import About from './about/about.component';
 import NeedHelpNow from './needHelpNow/needHelpNow.component';
 import { APP_NAME } from './constants/appName.constant';
+import Admin from './admin/admin.component';
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -47,15 +48,10 @@ class Main extends Component {
       <Layout>
         <Switch>
             <Route path="/services" component={Services} />
-            <Route path="/announcements" component={Announcements} />
-            <Route path="/i-need-help-now" component={NeedHelpNow} />
-            <Route path="/feedback" component={Feedback} />
-            <Route path="/about" component={About} />
+            <Route path="/admin" component={Admin} />
             <Route path="/" component={Services} />
           </Switch>
-        <Footer style={{ textAlign: 'center' }}>
-          {APP_NAME} ©2019 Created at Knock Hack
-        </Footer>
+
       </Layout>
     </Layout>
     );
