@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Select } from 'antd';
 import { bindActionCreators } from 'redux';
-import { Card } from 'antd';
+import { Card, Breadcrumb } from 'antd';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import { List, Avatar } from 'antd';
@@ -56,7 +56,14 @@ class ShelterDetails extends Component {
  
     const result = this.props.serviceResults[0];
     return (
+      <div>
+          <Breadcrumb className="service-selected-details-breadcrumbs">
+            <Breadcrumb.Item><a onClick={() => this.props.history.push('/services')}>Services</a></Breadcrumb.Item>
+            <Breadcrumb.Item><a onClick={() => this.props.history.push('/services/shelters')}>Shelters</a></Breadcrumb.Item>
+            <Breadcrumb.Item>Detail View</Breadcrumb.Item>
+        </Breadcrumb>
       <div className="shelter-details-container">
+       
       <div className="shelter-details-left">
       <div className="shelter-details-name">{result.name}</div>
       <div className="shelter-details-beds-available">4 beds currently available!</div>
@@ -101,6 +108,7 @@ class ShelterDetails extends Component {
 
 
    
+      </div>
       </div>
     );
   }

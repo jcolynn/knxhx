@@ -1,5 +1,6 @@
 .shelter-details-container {
     margin: 1rem;
+    margin-bottom: 5rem;
 }
 
 .shelter-details-name {
@@ -33,4 +34,20 @@
 .shelter-details-beds-available {
     color: #00C0EF;
     font-weight: 600;
+}
+
+.map-error {
+    background: rgb(218, 218, 218);
+    height: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    padding: 2rem;
+}
+
+.service-selected-details-breadcrumbs {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
