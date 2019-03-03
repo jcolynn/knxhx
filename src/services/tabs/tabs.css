@@ -1,0 +1,26 @@
+.tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+    background: white;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    width: 100%;
+    font-size: 1.3rem;
+    color: grey;
+    cursor: pointer;
+}
+
+.tab-active {
+    color: #00C0EF;
+}
