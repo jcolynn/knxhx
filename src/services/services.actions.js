@@ -38,10 +38,11 @@ export const setRegionFilters = (val) => ({
     val
 });
 
-export function handleFetchSuccess({response, page, count}) {
+export function handleFetchSuccess({response, page, numResults, count}) {
     return (dispatch, getState) => {
         dispatch(setPaging({
             page: page,
+            numResults: numResults,
             count: count || getState().paging.count
         }));
         dispatch(setServiceResults(response))
@@ -246,7 +247,7 @@ export function fetchData() {
                     }
                 })
             }
-            dispatch(handleFetchSuccess({response, page, count: result.size, count: result.size}))
+            dispatch(handleFetchSuccess({response, page, numResults: response.length, count: result.size}))
           });
 
     }
