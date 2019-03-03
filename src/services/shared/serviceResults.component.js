@@ -6,6 +6,16 @@ import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import * as ServicesActions from '../services.actions';
 
+const IconText = ({ type, text }) => (
+  <span>
+<Icon className="yellow-icon" type="star" theme="filled"  style={{ marginRight: 2 }}/>
+<Icon className="yellow-icon" type="star" theme="filled"  style={{ marginRight: 2 }}/>
+<Icon className="yellow-icon" type="star" theme="filled"  style={{ marginRight: 2 }}/>
+<Icon className="yellow-icon" type="star" theme="filled"  style={{ marginRight: 2 }}/>
+    <Icon className="yellow-icon" type={type} style={{ marginRight: 2 }} />
+  </span>
+);
+
 class ServiceResults extends Component {
 
     goToDetails = (id) => {
@@ -41,6 +51,7 @@ class ServiceResults extends Component {
       <List.Item
         onClick={() => this.goToDetails(item.id)}
         key={item.title}
+        actions={[<IconText type="star-o" text="4.5 / 5" />]}
         extra={<Icon type="right" />}
       >
         <List.Item.Meta
