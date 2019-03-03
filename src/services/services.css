@@ -92,3 +92,11 @@
 .yellow-icon {
     color: #FFB566;
 }
+
+.favorites-list {
+    margin: 1rem;
+}
+
+.red-icon {
+    color: red;
+}

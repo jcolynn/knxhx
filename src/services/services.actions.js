@@ -252,3 +252,59 @@ export function fetchData() {
 
     }
 }
+
+
+export function fetchDataForFavorites() {
+    return (dispatch, getState) => {
+        const page = getState().paging.page || 1;
+        const queryParams = [{param: 'page', value: page}];
+        const {
+            shelterTypeFilters,
+            ageFilters,
+            genderFilters,
+            populationFilters,
+            regionFilters
+        } = getState();
+
+        const queryHash = {};
+
+        shelterTypeFilters.forEach(type => {
+            queryParams.push({param: type, value: true})
+        })
+        ageFilters.forEach(type => {
+            queryParams.push({param: type, value: true})
+        })
+        genderFilters.forEach(type => {
+            queryParams.push({param: type, value: true})
+            queryHash[type] = true;
+        })
+        populationFilters.forEach(type => {
+            queryParams.push({param: type, value: true})
+        })
+        regionFilters.forEach(type => {
+            queryParams.push({param: type, value: true})
+        })
+
+        console.log(queryParams, 'query params')
+
+       
+        
+
+
+        firebase.firestore().collection('service_providers').limit(3).get().then(result => {
+            console.log(result, 'result docs')
+            const response = [];
+            if (result.docs) {
+                result.docs.forEach(doc => {
+                    if (doc.exists) {
+                        const data = doc.data();
+                        
+                        response.push(doc.data());
+                    }
+                })
+            }
+            dispatch(handleFetchSuccess({response, page, numResults: response.length, count: result.size}))
+          });
+
+    }
+}
